@@ -26,5 +26,11 @@ struct Router {
         vc2.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .up), dismissing: .cover(direction: .down))
         return vc2
     }
+    navigator.register("quickstart://about") { url, values, context in
+        let vc2 = AboutVC(navigator: navigator)
+        vc2.hero.isEnabled = true
+        vc2.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .up), dismissing: .cover(direction: .down))
+        return vc2
+    }
   }
 }

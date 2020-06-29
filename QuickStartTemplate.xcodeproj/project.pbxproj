@@ -23,6 +23,7 @@
 		4272F82324A4B0CA002F0EE4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4272F82224A4B0CA002F0EE4 /* Router.swift */; };
 		4272F82524A5FDA8002F0EE4 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4272F82424A5FDA7002F0EE4 /* UIColorExtensions.swift */; };
 		4272F82724A5FDCB002F0EE4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4272F82624A5FDCB002F0EE4 /* StringExtensions.swift */; };
+		4272F82924A9F021002F0EE4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4272F82824A9F021002F0EE4 /* UIApplicationExtension.swift */; };
 		893CD23D1FF3339DD34FC06A /* Pods_QuickStartTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837F8E36122553DF23C9CEBB /* Pods_QuickStartTemplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4272F82224A4B0CA002F0EE4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4272F82424A5FDA7002F0EE4 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		4272F82624A5FDCB002F0EE4 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		4272F82824A9F021002F0EE4 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		837F8E36122553DF23C9CEBB /* Pods_QuickStartTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStartTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1C414D9D2A990F8E2868B6 /* Pods-QuickStartTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStartTemplate.debug.xcconfig"; path = "Target Support Files/Pods-QuickStartTemplate/Pods-QuickStartTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		F0A1CED6C5EC0120635E1CE8 /* Pods-QuickStartTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStartTemplate.release.xcconfig"; path = "Target Support Files/Pods-QuickStartTemplate/Pods-QuickStartTemplate.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				4272F81B24A4A7C1002F0EE4 /* UIViewExtensions.swift */,
 				4272F82424A5FDA7002F0EE4 /* UIColorExtensions.swift */,
 				4272F82624A5FDCB002F0EE4 /* StringExtensions.swift */,
+				4272F82824A9F021002F0EE4 /* UIApplicationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				4272F81724A4A4F9002F0EE4 /* EventTypes.swift in Sources */,
 				4272F81C24A4A7C1002F0EE4 /* UIViewExtensions.swift in Sources */,
 				4272F82724A5FDCB002F0EE4 /* StringExtensions.swift in Sources */,
+				4272F82924A9F021002F0EE4 /* UIApplicationExtension.swift in Sources */,
 				4272F7FE24A49AA9002F0EE4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

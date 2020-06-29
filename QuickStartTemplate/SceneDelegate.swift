@@ -10,10 +10,10 @@ import UIKit
 import URLNavigator
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    public let navigator = Navigator()
+    
     var window: UIWindow?
-
-
+    
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -21,50 +21,89 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // No storyboard init
-        Router.initialize(navigator: navigator)
-        
-        if let windowScene = scene as? UIWindowScene {
-            self.window = UIWindow(windowScene: windowScene)
-            let vc2 = HomeVC(navigator: navigator)
-            vc2.hero.isEnabled = true
-            vc2.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .up), dismissing: .cover(direction: .down))
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            Router.initialize(navigator: appDelegate.navigator)
             
-            self.window?.rootViewController = TransparentNavigationViewController(rootViewController: vc2)
-            self.window?.makeKeyAndVisible()
+            if let windowScene = scene as? UIWindowScene {
+                self.window = UIWindow(windowScene: windowScene)
+                let vc2 = HomeVC(navigator: appDelegate.navigator)
+                vc2.hero.isEnabled = true
+                vc2.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .up), dismissing: .cover(direction: .down))
+                
+                self.window?.rootViewController = TransparentNavigationViewController(rootViewController: vc2)
+                self.window?.makeKeyAndVisible()
+            }
+            
+            self.window!.backgroundColor = UIColor.white
         }
         
-        self.window!.backgroundColor = UIColor.white
-
+        // Deep link support //
+        if let urlContext = connectionOptions.urlContexts.first {
+                
+            let sendingAppID = urlContext.options.sourceApplication
+            let url = urlContext.url
+            print("source application = \(sendingAppID ?? "Unknown")")
+            print("url = \(url)")
+                
+            // Process the URL similarly to the UIApplicationDelegate example.
+        }
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
-
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>){
+        // Deep link support //
+            let urlContext = URLContexts.first
+                
+            let sendingAppID = urlContext?.options.sourceApplication
+            let url = urlContext?.url
+            print("source application = \(sendingAppID ?? "Unknown")")
+            print("url = \(String(describing: url))")
+       
+            if let _url = urlContext?.url {
+                guard let components = NSURLComponents(url: _url, resolvingAgainstBaseURL: true),
+                    let path = components.path,
+                    let params = components.queryItems else {
+                        print("Invalid URL or path missing")
+                        if _url.absoluteString != "" {
+                            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                                appDelegate.openDeepLinkURL(url: _url.absoluteString)
+                            }
+                        }
+                        return
+                    }
+                print(path, params)
+            }
+            // Process the URL similarly to the UIApplicationDelegate example.
+        
+    }
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
-
+    
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
-
+    
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    
 }
 

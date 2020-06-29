@@ -41,3 +41,12 @@ Flow example:
 * AboutVC handles that event and invokes a function to update the UI
 
 This way we are decoupling ViewControllers from their data and the use of generic ViewControllers becomes a simple task of changing the event they listen to.
+
+### Deep linking
+
+* In order to deep link add appropriate URL Types and handle them through the SceneDelegate file. 
+* The url route must also be included on the `Router.swift` and finally call `openDeepLinkURL` on AppDelegate to show the view (you can customize transition animations here)
+
+![image info](deel-link-sample.gif)
+
+A sample already exists for `quickstart://about` url scheme
