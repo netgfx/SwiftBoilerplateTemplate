@@ -33,6 +33,9 @@ To navigate with style. Available transition animations:
  .zoomOut
  ```
  Read more here: https://github.com/HeroTransitions/Hero
+ 
+ ### DataManager
+ 
  * `DataManager.swift` is an experimental feature that allows the use of KVO on data that is dynamically changing and we need to respond to those changes. By using KVO on a data structure like `VersionNumber.swift` and the launch of a custom event we can respond to changes immediately by changing the UI without having to handle data changes within ViewControllers.
 Flow example:
 * `AboutVC listens to event `VERSION_CHANGE`
