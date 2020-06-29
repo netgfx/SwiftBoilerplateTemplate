@@ -39,7 +39,11 @@ class AboutVC: UIViewController {
         }
     }
     
-    
+    deinit {
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            appDelegate.globalEvents.removeListeners(eventNameToRemoveOrNil: AboutEvents.CURRENT_VERSION_CHANGE.action)
+        }
+    }
     
     
     func addGUI() {
