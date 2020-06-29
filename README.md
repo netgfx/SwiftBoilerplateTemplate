@@ -1,5 +1,5 @@
 # SwiftBoilerplateTemplate
-A Swift (no-storyboard) boilerplate template project, using URLNavigation and Hero for cool transitions
+A Swift (no-storyboard) boilerplate template project, using URLNavigator and Hero for cool transitions
 
 ### Install
 
@@ -7,7 +7,7 @@ A Swift (no-storyboard) boilerplate template project, using URLNavigation and He
 
 ### Capabilities
 
-* URLNavigation library is handling navigation from one ViewController to another via `Router.swift` where you can define your routes
+* URLNavigator (https://github.com/devxoul/URLNavigator) library is handling navigation from one ViewController to another via `Router.swift` where you can define your routes
 * `TransparentNavigationVC.swift` is used for more control over the NavigationController
 * No-storyboard, but we do love AutoLayout so `UIViewExtensions.swift` contain a set of utilities
 * Hero transitions and animations are baked in just use
@@ -47,7 +47,7 @@ This way we are decoupling ViewControllers from their data and the use of generi
 
 ### Deep linking
 
-* In order to deep link add appropriate URL Types and handle them through the SceneDelegate file. 
+* In order to deep link add appropriate URL Types and handle them through the SceneDelegate file.
 * The url route must also be included on the `Router.swift` and finally call `openDeepLinkURL` on AppDelegate to show the view (you can customize transition animations here)
 
 ![image info](deel-link-sample.gif)
