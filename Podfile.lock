@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Hero (1.5.0)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - SwiftKeychainWrapper (3.4.0)
+  - URLNavigator (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Hero
+  - Kingfisher
+  - SwiftKeychainWrapper
+  - URLNavigator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Hero
+    - Kingfisher
+    - SwiftKeychainWrapper
+    - URLNavigator
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+
+PODFILE CHECKSUM: b6e6dc7a3123be1dca986098188fb3cd530e96c9
+
+COCOAPODS: 1.8.4
